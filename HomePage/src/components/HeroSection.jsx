@@ -1,48 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const slides = [
   {
-    title: "LOREM IPSUM",
-    subtitle: "DOLOR SIT AMET",
-    desc: "Lorem ipsum dolor sit amet consectetur. Eu tristique sed blandit aliquam neque odio tortor in sit.",
-    btnText: "SHOP NOW"
+    title: 'LOREM IPSUM',
+    subtitle: 'DOLOR SIT AMET',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Eu tristique sed blandit aliquam neque odio tortor in sit. Facilisis est rhoncus sed commodo nec ipsum.',
+    btnText: 'SHOP NOW',
   },
   {
-    title: "KIDS COLLECTION",
-    subtitle: "SUMMER SALE",
-    desc: "Get the best outfits for your little ones. Trendy, comfy and colorful.",
-    btnText: "EXPLORE NOW"
+    title: 'KIDS COLLECTION',
+    subtitle: 'SUMMER SALE',
+    desc: 'Get the best outfits for your little ones. Trendy, comfy and colorful.',
+    btnText: 'EXPLORE NOW',
   },
   {
-    title: "NEW ARRIVALS",
-    subtitle: "LIMITED EDITION",
-    desc: "Fresh styles just landed! Discover the latest in kids fashion.",
-    btnText: "SEE MORE"
-  }
+    title: 'NEW ARRIVALS',
+    subtitle: 'LIMITED EDITION',
+    desc: 'Fresh styles just landed! Discover the latest in kids fashion.',
+    btnText: 'SEE MORE',
+  },
 ];
 
 const HeroCarousel = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
   return (
-    <div id="carouselExampleIndicators" className="carousel slide hero-carousel" data-bs-ride="carousel">
-      <div className="carousel-inner">
-        {slides.map((slide, index) => (
-          <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-            <div className="d-flex flex-column align-items-center justify-content-center text-white text-center" style={{ minHeight: '400px', backgroundColor: '#00c47a' }}>
-              <h1 className="mb-2">{slide.title}</h1>
-              <h3 className="mb-3">{slide.subtitle}</h3>
-              <p className="mb-3" style={{ maxWidth: '600px' }}>{slide.desc}</p>
-              <button className="btn btn-light px-4 py-2">{slide.btnText}</button>
-            </div>
+    <div className="hero-carousel">
+      {slides.map((slide, index) => (
+        <div
+          className={`hero-slide ${index === activeIndex ? 'active' : ''}`}
+          key={index}
+        >
+          <div className="hero-content">
+            <h1 className="hero-title">{slide.title}</h1>
+            <h1 className="hero-title hero-title-secondary">{slide.subtitle}</h1>
+            <p className="hero-subtitle">{slide.desc}</p>
+            <button className="shop-btn">{slide.btnText}</button>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
 
-      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true" />
+      {/* Custom Arrows */}
+      <button className="hero-arrow prev" onClick={handlePrev}>
+        <span>&larr;</span>
       </button>
-
-      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true" />
+      <button className="hero-arrow next" onClick={handleNext}>
+        <span>&rarr;</span>
       </button>
     </div>
   );
