@@ -127,7 +127,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s;
-  background-image: url('https://img.freepik.com/free-psd/3d-rendering-delivery-sales-background_23-2151588000.jpg'); /* Replace if needed */
+  background-image: url('https://img.freepik.com/free-psd/3d-rendering-delivery-sales-background_23-2151588000.jpg');
   background-size: cover;
   background-position: center;
   padding: 60px 20px;
@@ -218,24 +218,63 @@
 /* product show csae */
 .product-showcase {
   background: #f12aa4;
-  padding: 50px 20px;
+  padding: 60px 20px;
   color: white;
   text-align: center;
+  position: relative;
   overflow: hidden;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Cloud-like backgrounds */
+.cloud-top,
+.cloud-bottom {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to right, #93f05e, #f1a900);
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.cloud-top {
+  top: 0;
+}
+
+.cloud-bottom {
+  bottom: 0;
+  background: linear-gradient(to right, #ff5d5d, #f15ab7);
 }
 
 .title h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
+  margin-bottom: 10px;
+  z-index: 2;
+  position: relative;
 }
 
 .title p {
-  margin: 10px auto;
+  margin: 0 auto 10px;
   max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.5;
+  z-index: 2;
+  position: relative;
+}
+
+.underline {
+  width: 60px;
+  height: 5px;
+  background: #fff700;
+  margin: 15px auto;
+  border-radius: 5px;
 }
 
 .menu-buttons {
-  margin: 30px 0;
+  margin: 25px 0 40px;
+  z-index: 2;
+  position: relative;
 }
 
 .menu {
@@ -246,6 +285,7 @@
   border-radius: 20px;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .menu.active {
@@ -254,67 +294,85 @@
 }
 
 .slider {
-  padding: 30px 0;
+  z-index: 2;
+  position: relative;
 }
 
 .slide {
   background: #c62093;
   border-radius: 50%;
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   margin: 0 auto;
   position: relative;
   padding: 60px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .product-image {
-  width: 150px;
+  width: 140px;
   height: auto;
+  margin-bottom: 10px;
+  z-index: 3;
 }
 
-.price-tag {
+.price-bubble {
   background: #a6f529;
   color: black;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 50%;
   font-weight: bold;
   position: absolute;
   top: 10px;
   right: 20px;
+  font-size: 14px;
+  z-index: 3;
 }
 
-.heart {
-  font-size: 24px;
-  position: absolute;
-  right: 15px;
-  top: 60px;
+.heart-icon {
+  font-size: 20px;
   color: #ff9c00;
+  position: absolute;
+  right: 25px;
+  top: 70px;
+  z-index: 3;
 }
 
 .price-label {
   position: absolute;
   right: -60px;
-  top: 120px;
+  top: 130px;
   transform: rotate(-20deg);
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   color: white;
+  z-index: 3;
 }
 
 .desc {
+  font-size: 1rem;
   margin: 20px 0 10px;
+  max-width: 250px;
+  z-index: 3;
 }
 
 .shop-btn {
   background: #0047ff;
   color: white;
   border: none;
-  padding: 10px 25px;
+  padding: 10px 30px;
   border-radius: 30px;
   font-weight: bold;
+  font-size: 14px;
+  z-index: 3;
 }
+
 
 /* FAQ */
 .faq-section {

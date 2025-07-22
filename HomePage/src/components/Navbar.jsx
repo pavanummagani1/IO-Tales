@@ -46,7 +46,7 @@ const Navbar = () => {
 
       {/* Header */}
       <div className="header d-flex justify-content-between align-items-center px-4 py-3 position-relative">
-        <div className="logo fw-bold fs-3 position-relative z-2">BRAND LOGO</div>
+        <div className="logo fw-bold fs-3 position-relative z-2">KidZworld</div>
 
         {/* Desktop Menu */}
         <div className="menu-header d-none d-lg-flex gap-4 justify-content-center flex-grow-1">

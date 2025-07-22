@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 const slides = [
-  {
-    title: 'LOREM IPSUM',
-    subtitle: 'DOLOR SIT AMET',
-    desc: 'Lorem ipsum dolor sit amet consectetur. Eu tristique sed blandit aliquam neque odio tortor in sit. Facilisis est rhoncus sed commodo nec ipsum.',
-    btnText: 'SHOP NOW',
-  },
+{
+  title: 'FASHION FORWARD',
+  subtitle: 'STYLE THAT DEFINES YOU',
+  desc: 'Discover the latest trends in fashion designed to elevate your everyday look. From timeless classics to bold new arrivals, find outfits that match your personality and make a statement wherever you go.',
+  btnText: 'SHOP NOW',
+},
   {
     title: 'KIDS COLLECTION',
     subtitle: 'SUMMER SALE',
